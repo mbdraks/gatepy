@@ -43,18 +43,16 @@ if __name__ == '__main__':
                 exit()
 
 
-#ipaddr = 'http://fg01/'
-
 # URL definition
 login_url = ipaddr + '/logincheck'
 logout_url = ipaddr + '/logout'
 api_url = ipaddr + '/api/v2/'
 
-
 # Start session to keep cookies
 s = requests.Session()
 
 # Login
+# REMEMBER TO CHANGE THIS TO YOUR USER
 payload = {'username':'api_user', 'secretkey':'api_pass'}
 r = s.post(login_url, data=payload)
 
@@ -69,54 +67,27 @@ for cookie in s.cookies:
         s.headers.update({'X-CSRFTOKEN': csrftoken})
         
 #csrftoken = s.cookies['ccsrftoken']
-#print 'csrf1', csrftoken
 #s.headers.update({'X-CSRFTOKEN': csrftoken})
 
 # Requests
-'''
-r = s.get(api_url + 'monitor/system/resource/')
-
-print 'get resource:', r.status_code
-print r.json()  # Output JSON decoded
-'''
-
-# Request using function
-#api_request('monitor/system/interface/interface_name=port1')
-
+api_request('monitor/system/interface?interface_name=port1')
+#api_request('monitor/system/interface/')
 #api_request('monitor/system/firmware')
-
 #api_request('cmdb/firewall/address/R1')
 
 # Object creation
-#payload = {'json':
-#        {'name':'new_api_addr'}
-#        }
-        
-        #'subnet':'2.2.2.2 255.255.255.255'}
-
-#api_post('cmdb/firewall/address/?vdom=root', data)
-
-
 payload = {'json':
             {
             'name':'address1',
             'subnet':'2.2.2.2/32'
             }
         }
-#payload={'json':{'name':'address1'}}
-
-
-
-
-#r = s.post('http://fg01/api/v2/cmdb/firewall/address', params={'vdom':'root'}, data=`payload`)
 
 api_post('cmdb/firewall/address', params={'vdom':vdom}, data=payload)
-
 
 print r.status_code
 print r.text
 
 # Logout
 r = s.get(logout_url)
-
 print r.text
