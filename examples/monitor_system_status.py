@@ -40,3 +40,5 @@ fgt.login(**device)
 out = fgt.monitor('system', 'status')
 
 pprint(out)
+
+fgt.logout()

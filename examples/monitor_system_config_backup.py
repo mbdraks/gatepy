@@ -43,3 +43,5 @@ out = fgt.download('system', 'config/backup', parameters={'scope': 'global'})
 
 with open("fg_backup.txt", "w") as f:
     f.write(out.text)
+
+fgt.logout()
