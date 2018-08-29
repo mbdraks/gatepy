@@ -94,3 +94,5 @@ fgt.login(**device)
 out = fgt.monitor('system', 'firmware')
 
 pprint(out)
+
+fgt.logout()
