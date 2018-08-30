@@ -1,0 +1,8 @@
+# Host Definition for gatepy
+
+# Usage:
+# source _host
+
+export FG_HOST='10.99.236.231'
+export FG_USER='admin'
+export FG_PASS=''

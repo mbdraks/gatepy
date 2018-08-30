@@ -4,13 +4,13 @@
 Retrieve basic system status.
 
 Method
-  https://<DEVICE_IP>/api/v2/monitor/system/status
+    https://<DEVICE_IP>/api/v2/monitor/system/status
 
 CLI
-  NA
+    NA
 
 JSON
-  {
+    {
     "http_method":"GET",
     "results":{
     },
@@ -21,24 +21,31 @@ JSON
     "serial":"FGVM020000000000",
     "version":"v6.0.0",
     "build":76
-  }
+    }
 '''
 
-from fortiosapi import FortiOSAPI
+import os
 from pprint import pprint
+from fortiosapi import FortiOSAPI
 
-fgt = FortiOSAPI()
 
-device = {
-    'host': '10.99.236.231',
-    'username': 'admin',
-    'password': '',
+FG = FortiOSAPI()
+
+# Source _host
+FG_HOST = os.environ['FG_HOST']
+FG_USER = os.environ['FG_USER']
+FG_PASS = os.environ['FG_PASS']
+
+DEVICE = {
+    'host': FG_HOST,
+    'username': FG_USER,
+    'password': FG_PASS,
 }
 
-fgt.login(**device)
+FG.login(**DEVICE)
 
-out = fgt.monitor('system', 'status')
+out = FG.monitor('system', 'status')
 
 pprint(out)
 
-fgt.logout()
+FG.logout()
