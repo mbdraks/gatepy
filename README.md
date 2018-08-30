@@ -21,7 +21,7 @@ $ docker run --name=gatepy_dev -it ubuntu:18.04
 
 # Install packages
 $ apt update
-$ apt install git python3 python3-pip python-dev libssl-dev libffi-dev
+$ apt install git python3 python3-pip python-dev libssl-dev libffi-dev vim
 
 # Clone this repository
 $ git clone https://github.com/barbosm/gatepy

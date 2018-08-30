@@ -27,21 +27,32 @@ Response
     Object
 '''
 
+import os
+from pprint import pprint
 from fortiosapi import FortiOSAPI
 
-fgt = FortiOSAPI()
+FG = FortiOSAPI()
 
-device = {
-    'host': '10.99.236.231',
-    'username': 'admin',
-    'password': '',
+# Source _host
+FG_HOST = os.environ['FG_HOST']
+FG_USER = os.environ['FG_USER']
+FG_PASS = os.environ['FG_PASS']
+
+DEVICE = {
+    'host': FG_HOST,
+    'username': FG_USER,
+    'password': FG_PASS,
 }
 
-fgt.login(**device)
+FG.login(**DEVICE)
 
-out = fgt.download('system', 'config/backup', parameters={'scope': 'global'})
+param = {
+    'scope': 'global',
+}
+
+out = FG.download('system', 'config/backup', parameters=param)
 
 with open("fg_backup.txt", "w") as f:
     f.write(out.text)
 
-fgt.logout()
+FG.logout()
