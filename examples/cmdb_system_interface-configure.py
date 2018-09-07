@@ -9,22 +9,22 @@ Method
 
 CLI
 
-FG # conf sys int
-FG (interface) # ed port3
-FG (port3) # set ip 192.0.2.200/24
-FG (port3) # set allowaccess ping
-FG (port3) # end
+    FG # conf sys int
+    FG (interface) # ed port3
+    FG (port3) # set ip 192.0.2.200/24
+    FG (port3) # set allowaccess ping
+    FG (port3) # end
 
-FG # sh sys int port3
-config system interface
-    edit "port3"
-        set vdom "root"
-        set ip 192.0.2.200 255.255.255.0
-        set allowaccess ping
-        set type physical
-        set snmp-index 3
-    next
-end
+    FG # sh sys int port3
+    config system interface
+        edit "port3"
+            set vdom "root"
+            set ip 192.0.2.200 255.255.255.0
+            set allowaccess ping
+            set type physical
+            set snmp-index 3
+        next
+    end
 
 
 Response

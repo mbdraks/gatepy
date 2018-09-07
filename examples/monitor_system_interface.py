@@ -3,8 +3,7 @@
 '''
 Retrieve statistics for all system interfaces.
 
-At FOS 6.0.2 this was not reporting all interfaces, alternatively 
-use monitor/system/available-interfaces
+# DEPRECATED - Use monitor/system/available-interfaces
 
 Method
     https://<DEVICE_IP>/api/v2/monitor/system/interface

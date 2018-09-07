@@ -3,6 +3,11 @@
 # Usage:
 # source _host
 
-export FG_HOST='10.99.236.231'
+# FG_HOST can include the port if not using default ports
+# like 443 for HTTPS and 80 for HTTP
+# Example: '172.16.216.136:10300'
+
+export FG_HOST='10.99.236.5'
 export FG_USER='admin'
 export FG_PASS=''
+
