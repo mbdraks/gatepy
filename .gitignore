@@ -1,3 +1,9 @@
 ignore
 .DS_Store
-.out
+*.out
+*.lic
+
+# Python
+__pycache__/
+*.egg-info/
+
