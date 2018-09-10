@@ -11,11 +11,9 @@ import requests
 from fortiosapi import FortiOSAPI
 
 class FortinetFortiGateMonitor(FortiOSAPI):
-    """FortinetFortiGate Class
-
-    This class will be used to extend the functions of the original 
-    FortiOSAPI class
-
+    """
+    This class will be used to provide easy access to monitor endpoints 
+    of FortiOS API.
     """
     def __init__(self):
         self._https = True
@@ -121,7 +119,7 @@ class FortinetFortiGateMonitor(FortiOSAPI):
 
         Args:
             view_type (str, optional): Include additional information for interfaces, valid options are:
-            
+
                                          * 'poe': Includes PoE information for supported ports. 
                                          * 'ha': Includes extra meta information useful when dealing with interfaces related to HA configuration. Interfaces that are used by an HA cluster as management interfaces are also included in this view. 
                                          * 'zone': Includes extra meta information for determining zone membership eligibility.
