@@ -49,6 +49,10 @@ $ python3 examples/monitor_system_status.py
 * Install python dependencies
 
 
+## Documentation
+* [Module Reference](https://gatepy.readthedocs.io/en/latest/reference.html)
+
+
 ## Environment
 
 Tested on:
