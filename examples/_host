@@ -7,7 +7,7 @@
 # like 443 for HTTPS and 80 for HTTP
 # Example: '172.16.216.136:10300'
 
-export FG_HOST='10.99.236.5'
+export FG_HOST='192.168.0.30'
 export FG_USER='admin'
 export FG_PASS=''
 
