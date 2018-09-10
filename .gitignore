@@ -7,3 +7,6 @@ ignore
 __pycache__/
 *.egg-info/
 
+# docs
+Makefile
+_build

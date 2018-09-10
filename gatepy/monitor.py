@@ -33,7 +33,7 @@ class FortinetFortiGateMonitor(FortiOSAPI):
         """Performs a policy lookup by creating a dummy packet and asking the kernel which policy would be hit.
 
         Args:
-            ipv6 (bool, optional): Perform an IPv6 lookup            
+            ipv6 (bool, optional): Perform an IPv6 lookup
             srcintf (str): Source Interface
             sourceport (int, optional): Source Port
             sourceip (str): Source IP
@@ -121,11 +121,11 @@ class FortinetFortiGateMonitor(FortiOSAPI):
 
         Args:
             view_type (str, optional): Include additional information for interfaces, valid options are:
-                                         'poe': Includes PoE information for supported ports. 
-                                         'ha': Includes extra meta information useful when dealing with interfaces related to HA configuration. 
-                                               Interfaces that are used by an HA cluster as management interfaces are also included in this view. 
-                                         'zone': Includes extra meta information for determining zone membership eligibility.
-                                         'vwp': Includes extra meta information for determining virtual wire pair eligibility.
+            
+                                         * 'poe': Includes PoE information for supported ports. 
+                                         * 'ha': Includes extra meta information useful when dealing with interfaces related to HA configuration. Interfaces that are used by an HA cluster as management interfaces are also included in this view. 
+                                         * 'zone': Includes extra meta information for determining zone membership eligibility.
+                                         * 'vwp': Includes extra meta information for determining virtual wire pair eligibility.
 
         Returns:
             Retrieve a list of all interfaces along with some meta information regarding their availability.
