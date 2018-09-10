@@ -1,11 +1,7 @@
-the fortiosapi module reference
+the gatepy module reference
 ================================
 
 .. module:: gatepy
-
-.. autoclass:: FortinetFortiGate
-    :members:
-    :member-order: bysource
 
 .. autoclass:: FortinetFortiGateMonitor
     :members:
